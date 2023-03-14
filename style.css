@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* for best practices */
+#wrapper{
+    height: 100vh;
+    /* for making height of wrapper equal to height of viewport. */
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+.container{
+    height: 100%;
+    width: 1200px;
+    margin: 0px auto;
+    /* o -- for top and bottom    auto--- left and right k liye jise content center mein a jata hain. */
+    padding: 20px;
+}
+
+.container h1{
+     text-align: center;
+     font-size: 3rem;
+     margin: 20px 0;
+     /* yahan second value of margin se koi fark nai padega kitni bhi badee dedo bcoz alreadt text-align: center kar chukey hain. */
+}
+/* we can simply write h1 also for accessing */
+
+.gallery{
+    display: flex;
+    /* we make flex because we need to give space between each images and space distribution can be done easily in flebox */
+    flex-wrap: wrap;
+    /* wrap because we want only some images comes in single line and beyond that no. of image, extra images should come below automatically */
+    justify-content: space-between;
+}
+
+.card{
+    width: 32%; 
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    /* height default rahegi jaisa hum flrx box mein dekhte thein box stretch ho jate thein waise
+       hum alag se nai denge height by default jo image render go rhi hai uske according ho gyi hai 
+       and in flex by default height stretch rehti hain element ki*/
+}
+
+.card img{
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+    box-shadow: 0 0 20px  #333;
+    object-fit: cover;
+    /* Jitna bhi area hai apke pass oos purey area ko image fill kar degi stretch ho kar */
+}
+/* img ka parent tag card hain */
+
+
+/* On hovering over the card we observe some changes so let's do those */
+.card img:hover{
+    filter: grayscale(0%);
+    /* for bringing the original color of image on hovering */
+    filter: drop-shadow(0 0 10 #333);
+    transition-duration: 0.5s;
+    /* for smooth transition */
+    transform: scale(1.03);
+    /* for increasing card size */
+} 
+/* Have to work on shadow part as not responding at present?*/
+
+
+.card figcaption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 25px;
+    width: 100%;
+    height: 20%;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0;
+    /* It means transparency 100% matlab dikhega e nahi */
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5)0%, rgba(255, 255, 255, 0)100%);
+}
+/* card is the parent element of figure, ficaption, img */
+
+
+/* On hovering over the card we observe some changes so let's do those */
+.card figcaption:hover{
+    opacity: 1;
+    /*It means transparency 0% matlab clear dikhega*/
+    transform: scale(1.03);
+    transition-duration: 0.5;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
